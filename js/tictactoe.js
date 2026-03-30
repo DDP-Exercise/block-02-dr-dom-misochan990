@@ -64,7 +64,83 @@ const BATTLEFIELD =
 
 //TODO: Check if the battle is over, and if so, announce the winner!
 
+const size = BATTLEFIELD.length
+let winner = null;
+let winType = "";
+
+
 // Check Horizontal
+for (let i = 0; i < size; i++) {
+    let firstElement = BATTLEFIELD[i][0];
+    if (firstElement !== null) {
+        let isWin = true;
+        for(let j = 1; j < size; j++) {
+            if (BATTLEFIELD[i][j] !== firstElement) {
+                isWin = false;
+            }
+        }
+        if (isWin === true) {
+            winner = firstElement;
+            winType = "horizontal";
+        }
+    }
+}
 // Check Vertical
+for (let j = 0; j < size; j++) {
+    let firstElement = BATTLEFIELD[0][j];
+    if (firstElement !== null) {
+        let isWin = true;
+        for(let i = 1; i < size; i++) {
+            if (BATTLEFIELD[i][j] !== firstElement) {
+                isWin = false;
+            }
+        }
+        if (isWin === true) {
+            winner = firstElement;
+            winType = "vertical";
+        }
+    }
+}
+
 // Check Main Diagonal
+
+let firstMain = BATTLEFIELD[0][0];
+if (firstMain !== null) {
+    let isWin = true;
+    for (let i = 1; i < size; i++) {
+        if (BATTLEFIELD[i][i] !== firstMain) {
+            isWin = false;
+        }
+    }
+    if (isWin === true) {
+        winner = firstMain;
+        winType = "main-diagonal";
+    }
+}
+
+
 // Check Anti Diagonal
+
+let firstAnti = BATTLEFIELD[0][size-1];
+    if(firstAnti !== null && firstAnti !== undefined) {
+        let isWin = true;
+        for(let i = 1; i < size; i++) {
+            if(BATTLEFIELD[i][size-1-i] !== firstAnti) {
+                isWin = false;
+            }
+        }
+        if (isWin === true) {
+            winner = firstAnti;
+            winType = "anti-diagonal";
+        }
+    }
+
+if (winner !== null) {
+    console.log("The great Battle is over!");
+    console.log("The great winner is: " + winner + " (" + winType + ")");
+} else {
+    console.log("No winner!")
+}
+
+//what .... was that.... i almost lost my mind coding this... the javascript way...  a hard way indeed
+//when i catch u jimmy... oh when i catch u....
