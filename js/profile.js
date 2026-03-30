@@ -14,7 +14,20 @@
  *     Bratlsoft - 2026-03-15
  *******************************************************/
 
-//TODO: Place one object here.
+// Place one object here.
+const SAVIOR = {
+    name: "Carl",
+    age: 29,
+    location: "the dungeon",
+    hobbies:["complaining", "hunting goblins", "saving the world",],
+    type_of_companion: "Cat",
+    companion: {
+        name: "Miss Princess",
+        age: 3,
+        specialty: "wears a crown, bc she's a princess duh...",
+        favorite_snack: "premium freeze-dried tuna"
+    }
+}
 
 /*******************************************************
  *   DO NOT CHANGE THE CODE BELOW!
